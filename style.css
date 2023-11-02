@@ -1,59 +1,60 @@
+/* Reset some default styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
 }
-
-body {
+body{
   background-color: #16161e;
   color: #fffafb;
 }
-
+/* Preloader styles with animation */
 .preloader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #16161e;
+  background: #16161e; /* Background color */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
-  color: #f5f5f5;
-  animation: loading 2s infinite;
+  z-index: 999; /* Make sure it's on top of everything */
+  color: #f5f5f5; /* Text color */
+  animation: loading 2s infinite; /* Apply the loading animation */
 }
 
 @keyframes loading {
   0% {
-    content: "Loading.";
+      content: "Loading.";
   }
   33% {
-    content: "Loading..";
+      content: "Loading..";
   }
   66% {
-    content: "Loading...";
+      content: "Loading...";
   }
   100% {
-    content: "Loading";
+      content: "Loading";
   }
 }
 
 .preloader h1 {
-  font-size: 4vw;
+  font-size: 4vw; /* Responsive font size (4% of viewport width) */
   text-transform: uppercase;
-  max-width: 90%;
-  text-align: center;
+  max-width: 90%; /* Limit the width of the text */
+  text-align: center; /* Center the text */
 }
 
+/* Apply styles to the navigation bar */
 nav {
   display: flex;
   position: sticky;
-  top: 0;
+  top: 0; /* Stick to the top of the viewport */
+
   justify-content: space-between;
   align-items: center;
   background-color: #30303b;
@@ -80,30 +81,21 @@ nav {
 }
 
 .hamburger {
-  display: none;
+  display: none; /* Hide initially for larger screens */
   flex-direction: column;
   cursor: pointer;
-}
+}/* Objective section with modified background and text color */
 
-.scroll-triggered {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s, transform 0.5s;
-}
-
-.scroll-triggered:hover {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 .section {
   width: 100%;
-  height: 100vh;
+  height: 100vh; /* Full viewport height for each section */
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 24px;
-  transition: background-color 0.5s;
+  transition: background-color 0.5s; /* Add a smooth background color transition */
+
   background-color: #16161e;
   color: #f5f5f5;
   padding: 50px 0;
@@ -115,11 +107,11 @@ nav {
   background-color: #fffafb;
   margin: 4px 0;
 }
-
 .hero-banner {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+ 
   padding: 20px;
 }
 
@@ -171,7 +163,7 @@ nav {
 }
 
 #text {
-  transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out; /* Add a smooth transition for text changes */
 }
 
 .button-container {
@@ -190,7 +182,7 @@ nav {
 }
 
 .download-button:hover {
-  background-color: #333;
+  background-color: #333; /* Change the color on hover if desired */
 }
 
 .center-container {
@@ -205,12 +197,13 @@ nav {
 }
 
 .section-title {
-  width: 100%;
+  width: 100%; /* Full width for the title */
   text-align: center;
   font-size: 36px;
   margin-bottom: 20px;
-  text-transform: uppercase;
+  text-transform: uppercase; /* Apply text-transform */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
 }
 
 .card {
@@ -239,7 +232,7 @@ nav {
 
 .text h3 {
   font-size: 20px;
-  text-transform: uppercase;
+  text-transform: uppercase; /* Apply text-transform */
 }
 
 .text p {
@@ -250,25 +243,26 @@ nav {
 
 @keyframes fadeIn {
   from {
-    opacity: 0;
-    transform: translateY(20px);
+      opacity: 0;
+      transform: translateY(20px);
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
   }
 }
-
 .separator {
-  width: 100%;
-  height: 5px;
+  width: 100%; /* Adjust the width as needed */
+  height: 5px; /* Adjust the height as needed */
   background: linear-gradient(to right, #bfacb5, #7f7b82);
   background-size: 200% 100%;
   background-position: 100% 0;
   animation: slide 2s infinite;
-  margin: 0 auto;
+  margin: 0 auto; /* Center the separator horizontally */
 }
 
+/* Adjusted CSS for equal-sized left and right cards */
+/* Card styles for Education and Experience */
 #qualification .card {
   flex: 1;
   display: flex;
@@ -277,32 +271,38 @@ nav {
 
 #qualification .left-card-qualification, #qualification .right-card-qualification {
   flex: 1;
+  /* background-color: #fffafb; */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
+/* Reset some previous styles for the timeline */
 #qualification .timeline {
   list-style: none;
   padding: 0;
 }
 
 #qualification .timeline li {
-  padding-left: 30px;
-  margin-left: 10px;
-  position: relative;
-  border-left: 2px solid #7de2d1;
+  padding-left: 30px; /* Adjust the padding to control the space between the bullet and the border */
+    margin-left: 10px;
+    position: relative;
+    border-left: 2px solid #7de2d1; /* Add a border to the left of each item */
 }
 
 #qualification .timeline li:hover {
-  color: #7de2d1;
-  text-decoration: underline;
+  color: #7de2d1; /* Change the color on hover */
+  text-decoration: underline; /* Add an underline on hover */
 }
-
 #qualification .timeline li::before {
-  content: '\2022';
+  content: '\2022'; /* Unicode character for bullet (•) */
   position: absolute;
   top: 0;
-  left: -20px;
-  font-size: 18px;
+  left: -20px; /* Adjust the position of the bullet as needed */
+  font-size: 18px; /* Adjust the size of the bullet as needed */
 }
+
 
 #qualification .timeline h4 {
   font-size: 18px;
@@ -314,7 +314,7 @@ nav {
   opacity: 0;
   animation: fadeIn 2s forwards;
 }
-
+/* Container and title styles */
 #projects {
   background-color: #16161e;
   color: #f5f5f5;
@@ -325,7 +325,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: center; /* Center both horizontally and vertically */
 }
 
 #projects .section-title {
@@ -336,14 +336,16 @@ nav {
   text-transform: uppercase;
 }
 
+/* Project card styles */
 #projects .project-card {
   flex: auto;
-  width: calc(33.33% - 20px);
-  margin: 10px;
-  text-align: center;
+  width: calc(33.33% - 20px); /* Adjust the width and margin as needed for responsive layout */
+  margin: 10px; /* Add margin to separate the cards */
+  text-align: center; /* Center the text within each card */
 }
 
 #projects .card {
+  /* background-color: #fffafb; */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   padding: 20px;
@@ -351,7 +353,7 @@ nav {
 }
 
 #projects .card:hover {
-  transform: translate(-5px, -5px);
+    transform: translate(-5px, -5px); /* Move the card closer by adjusting the translation */
 }
 
 #projects .card h3 {
@@ -367,7 +369,7 @@ nav {
 .fs-14 {
   font-size: 14px;
 }
-
+/* Footer styles */
 footer {
   background-color: #30303b;
   color: #f5f5f5;
@@ -389,7 +391,13 @@ footer {
   flex: 1;
   text-align: center;
 }
+/* 
+.logo img {
+  max-width: 100px;
+} */
 
+
+/* Horizontal social media links */
 .social-media {
   list-style: none;
   margin: 0;
@@ -398,7 +406,7 @@ footer {
 }
 
 .social-media li {
-  margin-right: 15px;
+  margin-right: 15px; /* Add spacing between social media links */
 }
 
 .social-media a {
@@ -407,9 +415,10 @@ footer {
 }
 
 .social-media a:hover {
-  color: #7de2d1;
+  color: #7de2d1; /* Change the color on hover */
+  text-decoration: underline; /* Add an underline on hover */
 }
-
+/* Contact section styles */
 #contact {
   background-color: #16161e;
   color: #f5f5f5;
@@ -437,6 +446,13 @@ footer {
   flex-direction: column;
 }
 
+.section-title {
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* Contact form styles */
 #contact-form {
   text-align: left;
 }
@@ -461,7 +477,9 @@ footer {
   font-size: 16px;
 }
 
+/* Contact card styles */
 .contact-card {
+  /* background-color: #f5f5f5; */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   padding: 20px;
@@ -470,19 +488,27 @@ footer {
 }
 
 .contact-card:hover {
-  transform: translate(-5px, -5px);
+    transform: translate(-5px, -5px); /* Move the card closer by adjusting the translation */
 }
-
 .contact-card a {
-  color: #f5f5f5;
-  text-decoration: none;
-  transition: color 0.3s;
+  color: #f5f5f5; /* Set the text color for regular links */
+  text-decoration: none; /* Remove the default underline */
+  transition: color 0.3s; /* Add a smooth color transition on hover */
 }
 
 .contact-card a:hover {
-  color: #7de2d1;
+  color: #7de2d1; /* Change the color on hover */
+}
+.contact-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+.color{
+  color: #7de2d1; /* Change the color on hover */
+
 }
 
+/* Define font sizes for headings */
 h1 {
   font-size: 36px;
 }
@@ -506,24 +532,31 @@ h5 {
 h6 {
   font-size: 14px;
 }
+.logo-img{
+  width:15%;
+}
+.logo-img-footer{
+  width:50%;
+}
 
+/* Media query for responsiveness */
 @media (max-width: 768px) {
   .hero-banner {
-    flex-direction: column;
-    text-align: center;
+      flex-direction: column;
+      text-align: center;
   }
 
   .hero-banner-text, .hero-banner-image {
-    flex: 1;
-    padding: 10px;
+      flex: 1;
+      padding: 10px;
   }
 
   .nav-links {
-    display: none;
+    display: none; /* Hide nav links for mobile */
   }
 
   .hamburger {
-    display: flex;
+    display: flex; /* Show hamburger menu */
     flex-direction: column;
     cursor: pointer;
   }
@@ -536,25 +569,28 @@ h6 {
   .nav-active li {
     margin: 10px 0;
   }
-
   .card {
     flex: initial;
   }
-
   .contact-form {
     flex: initial;
   }
-
   #projects .project-card {
-    width: 100%;
+    width: 100%; /* Take full width on mobile */
   }
 
   #qualification .container {
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Center both cards vertically on mobile layout */
   }
 
   #qualification .left-card-qualification, #qualification .right-card-qualification {
-    width: 100%;
+    width: 100%; /* Make both cards take equal width on mobile */
+  }
+  .logo-img{
+    width:40%;
+  }
+  .logo-img-footer{
+    width:90%;
   }
 }
